@@ -1,0 +1,40 @@
+Using c:
+
+#include <stdio.h>
+
+// Function to perform linear search
+int linear_search(int A[], int n, int x) {
+    int i;
+    for (i = 0; i < n; i++) {
+        if (A[i] == x) {
+            return i;  // The target element x was found at index i
+        }
+    }
+    i = -1;  // The target element was not found
+    return i;
+}
+
+int main() {
+    int n, x, i, result;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    int A[n];
+    printf("Enter %d elements:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &A[i]);
+    }
+
+    printf("Enter the element to search: ");
+    scanf("%d", &x);
+
+    result = linear_search(A, n, x);
+
+    if (result == -1)
+        printf("Element %d not found in the array.\n", x);
+    else
+        printf("Element %d found at index %d (position %d).\n", x, result, result + 1);
+
+    return 0;
+}
